@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
+}
+
+#calculadora{
+    margin: 5% 1%;
+    background-color: rgb(20,20,20);
+    display: block;
+    border: 5px solid black;
+    border-radius: 5%;
+    padding: 2%;
+    width: 350px;
+    max-width: 100%;
+}
+
+.marca{
+    display: block;
+    margin: 5%;
+    font-size: 1.5em;
+    color: aliceblue;
+    text-align: center; 
+}
+
+#pantalla{
+    display: block;
+    background-color: rgb(85, 185, 65);
+    margin: 10% 5%;
+    padding: 3% 1%;
+    font-size: 1.5em;
+    font-weight: 800;
+    text-align: end;
+    grid-column: 1 / -1;
+    border-radius: 10px ;
+}
+
+.botones{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    width: 90%;
+    max-width: 100%;
+    margin: 5%;
+    padding: 1em 0;
+    gap: .5rem;
+    margin-bottom: 20%;
+}
+
+.btn {
+    background-color: gray;
+    color: aliceblue;
+}
+
+#eliminar {
+    background-color: rgb(66, 192, 41);
+    border-color: rgb(50, 128, 34);
+}
+
+#vaciar {
+    background-color: rgb(66, 192, 41);
+    border-color: rgb(50, 128, 34); 
+}
+
+
+@media (max-width:250px){
+    #calculadora{
+        margin: 0;
+        display: block;
+        border: none;
+        border-radius: 0;
+    }
+    .marca{
+        font-size: 1em;
+    }
+}
+
+@media (max-width:190px){
+    #calculadora{
+        padding:10% 0;
+    }
+
+    #pantalla{
+        margin: 0;
+        font-size: 1em;
+        border-radius: 0;
+    }
+
+    .botones{
+        display: grid;
+        gap: 1px;
+        margin: 5% 3%;
+    }
+}
+
