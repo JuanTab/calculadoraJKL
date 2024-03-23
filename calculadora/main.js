@@ -20,6 +20,8 @@ botones.forEach(boton => {
         }
 
         if(boton.id === "res"){
+
+//en caso de que el usuario coloque operaciones sin sentido, este sera el mensaje que le saldra
             try {
                 pantalla.textContent = eval(pantalla.textContent); 
             } catch {

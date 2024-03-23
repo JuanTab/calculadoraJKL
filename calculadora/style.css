@@ -68,6 +68,8 @@ body {
     border-color: rgb(50, 128, 34); 
 }
 
+/*en estes apartado le daremos unos minimos cambios para cuando la pagina 
+se ejecute en dispositivos moviles con muy poco ancho*/
 
 @media (max-width:250px){
     #calculadora{
