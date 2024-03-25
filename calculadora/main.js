@@ -29,16 +29,22 @@ botones.forEach(boton => {
                 if (result >= 18){
                     try {
                         pantalla.textContent = eval(gnum + pantalla.textContent.slice(3));
-                        pantalla.textContent = eval(pantalla.textContent)
-                       
-                        result = pantalla.textContent.length;
-        
-                        if(result >= 18){
-                            gnum = pantalla.textContent;
-                            entr = result;
-                        }else {
-                            entr = 0;
-                            gnum = 0;}
+
+                        if(pantalla.textContent === "Infinity"){
+                            pantalla.textContent = "ERROR!";
+                        } else {
+                            
+                            pantalla.textContent = eval(pantalla.textContent)
+                           
+                            result = pantalla.textContent.length;
+            
+                            if(result >= 18){
+                                gnum = pantalla.textContent;
+                                entr = result;
+                            }else {
+                                entr = 0;
+                                gnum = 0;}
+                        }
                         
                     } catch {
                         pantalla.textContent = "ERROR!";
@@ -46,18 +52,22 @@ botones.forEach(boton => {
                    
                 } else {
                     try {
-               
                         pantalla.textContent = eval(pantalla.textContent)
+
+                        if ( pantalla.textContent === "Infinity"){
+                            pantalla.textContent = "ERROR!";
+                        } else {
                        
-                        result = pantalla.textContent.length;
+                            result = pantalla.textContent.length;
         
-                        if(result >= 18){
-                            gnum = pantalla.textContent;
-                            entr = result;
-                        }else 
-                        {
-                            entr = 0;
-                            gnum = 0;
+                            if(result >= 18){
+                                gnum = pantalla.textContent;
+                                entr = result;
+                            }else 
+                            {
+                                entr = 0;
+                                gnum = 0;
+                            }
                         }
                     } catch {
                         pantalla.textContent = "ERROR!";
@@ -72,7 +82,30 @@ botones.forEach(boton => {
         
        
         if (pantalla.textContent === "0" || pantalla.textContent === "ERROR!"){
-            pantalla.textContent = botonUndido;
+            switch (botonUndido){
+                case "+":
+                pantalla.textContent = "0";
+                pantalla.textContent += botonUndido;
+                break;
+
+                case "-":
+                pantalla.textContent = "0";
+                pantalla.textContent += botonUndido;
+                break;
+
+                case "*":
+                pantalla.textContent = "0";
+                pantalla.textContent += botonUndido;
+                break;
+
+                case "/" :
+                pantalla.textContent = "0";
+                pantalla.textContent += botonUndido;
+                break;
+
+                default : 
+                pantalla.textContent = botonUndido;
+            }
         } else {
 //en caso de el numero tenga digitos mayores que el espacio que se tiene se ejecutara este bloque lo que convertiria el numero anterior en ans 
 //y el numero queda guardado en 
@@ -81,21 +114,25 @@ botones.forEach(boton => {
                     case "+":  
                         pantalla.textContent = "ans";
                         pantalla.textContent += botonUndido;
+                        entr = pantalla.textContent;
                     break;
 
                     case "-":
                         pantalla.textContent = "ans";
                         pantalla.textContent += botonUndido;
+                        entr = pantalla.textContent;
                         break;
 
                     case "*":
                         pantalla.textContent = "ans";
                         pantalla.textContent += botonUndido;
+                        entr = pantalla.textContent;
                         break;
 
                     case "/":
                         pantalla.textContent = "ans";
                         pantalla.textContent += botonUndido;
+                        entr = pantalla.textContent;
                         break;
                     default:
                         pantalla.textContent += botonUndido;
@@ -103,7 +140,6 @@ botones.forEach(boton => {
                 
             } else {
                 pantalla.textContent += botonUndido;
-                
                 ;}
         
         }
