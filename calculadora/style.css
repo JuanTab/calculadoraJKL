@@ -8,55 +8,135 @@ html {
 }
 
 body {
+    background-color: rgb(19, 6, 31);
     font-family: sans-serif, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
 }
 
-#calculadora{
-    margin: 5% 1%;
-    background-color: rgb(20,20,20);
-    display: block;
-    border: 5px solid black;
-    border-radius: 5%;
+#calculadora {
+    margin: 0 auto;
     padding: 2%;
-    width: 350px;
-    max-width: 100%;
+
 }
 
-.marca{
-    display: block;
+.marca {
     margin: 5%;
     font-size: 1.5em;
-    color: aliceblue;
-    text-align: center; 
+    background: linear-gradient(rgb(231, 8, 183), rgb(17, 92, 255), rgb(43, 4, 105));
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    animation: cambiodecolor 20s infinite;
 }
 
-#pantalla{
+@keyframes cambiodecolor {
+    0% {
+        background: linear-gradient(rgb(231, 8, 183), rgb(17, 92, 255), rgb(43, 4, 105));
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+
+    5% {
+        background: linear-gradient(rgb(17, 92, 255), rgb(231, 8, 183), rgb(86, 10, 209));
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+
+    10% {
+        background: linear-gradient(rgb(86, 10, 209), rgb(17, 92, 255), rgb(231, 8, 183));
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+
+    15% {
+        background: linear-gradient(rgb(231, 8, 183), rgb(86, 10, 209), rgb(17, 92, 255));
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+
+    20% {
+        background: linear-gradient(rgb(17, 92, 255), rgb(231, 8, 183), rgb(86, 10, 209));
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+
+    25% {
+        background: linear-gradient(rgb(86, 10, 209), rgb(17, 92, 255), rgb(231, 8, 183));
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+
+    30% {
+        background: linear-gradient(rgb(231, 8, 183), rgb(17, 92, 255), rgb(43, 4, 105));
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+
+    35% {
+        background: linear-gradient(rgb(17, 92, 255), rgb(231, 8, 183), rgb(86, 10, 209));
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+
+    40% {
+        background: linear-gradient(rgb(86, 10, 209), rgb(17, 92, 255), rgb(231, 8, 183));
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+
+    45% {
+        background: linear-gradient(rgb(231, 8, 183), rgb(86, 10, 209), rgb(17, 92, 255));
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+
+    50% {
+        background: linear-gradient(rgb(17, 92, 255), rgb(231, 8, 183), rgb(86, 10, 209));
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+
+    55% {
+        background: linear-gradient(rgb(86, 10, 209), rgb(17, 92, 255), rgb(231, 8, 183));
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+
+    100% {}
+}
+
+#pantalla {
     display: block;
-    background-color: rgb(85, 185, 65);
+    background-color: rgb(20, 218, 96);
     margin: 10% 5%;
     padding: 3% 1%;
     font-size: 1.5em;
     font-weight: 800;
     text-align: end;
     grid-column: 1 / -1;
-    border-radius: 10px ;
+    border-radius: 10px;
     overflow-x: hidden;
 }
 
-.botones{
+.botones {
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
     width: 90%;
     max-width: 100%;
     margin: 5%;
     padding: 1em 0;
     gap: .5rem;
-    margin-bottom: 20%;
 }
 
 .btn {
-    background-color: gray;
+    background-color: rgba(148, 10, 79, 0.329);
+    border: 2px solid rgba(35, 10, 48, 0.986);
     color: aliceblue;
+}
+
+.btn:hover {
+    background-color: rgb(66, 3, 75);
 }
 
 #eliminar {
@@ -66,39 +146,44 @@ body {
 
 #vaciar {
     background-color: rgb(66, 192, 41);
-    border-color: rgb(50, 128, 34); 
+    border-color: rgb(50, 128, 34);
 }
 
 /*en estes apartado le daremos unos minimos cambios para cuando la pagina 
 se ejecute en dispositivos moviles con muy poco ancho*/
 
-@media (max-width:250px){
-    #calculadora{
+@media (max-width:250px) {
+    body {
+        background-color: rgb(20, 20, 20);
+    }
+
+    #calculadora {
         margin: 0;
         display: block;
         border: none;
         border-radius: 0;
+        height: 100%;
     }
-    .marca{
+
+    .marca {
         font-size: 1em;
     }
 }
 
-@media (max-width:190px){
-    #calculadora{
-        padding:10% 0;
+@media (max-width:190px) {
+    #calculadora {
+        padding: 10% 0;
     }
 
-    #pantalla{
+    #pantalla {
         margin: 0;
         font-size: 1em;
         border-radius: 0;
     }
 
-    .botones{
+    .botones {
         display: grid;
         gap: 1px;
         margin: 5% 3%;
     }
 }
-
